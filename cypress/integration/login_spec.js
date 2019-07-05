@@ -17,5 +17,11 @@ describe('Login test', () => {
     beforeEach(() => {
       cy.visit('/login')
     })
+    it('redirect to /dashboard on success', () => {
+      cy.get('input[name=username]').type(username)
+      cy.get('input[name=password]').type(password)
+      cy.get('form').submit()
+      cy.url().should('include', 'dashboard')
+    })
   })
 })
