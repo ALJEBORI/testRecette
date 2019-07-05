@@ -35,9 +35,9 @@
       "requireSameDimensions": true
     },
     {
-      "label": "BackstopJS Homepage",
+      "label": "BackstopJS unauthorize",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://localhost:4000/unauthoraized",
+      "url": "http://localhost:4000/unauthorized",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
