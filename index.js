@@ -52,5 +52,9 @@ app.get('/', (req, res) => res.redirect('/login'))
 app.get('/login', (req, res) => {
   res.render('./login.hbs')
 })
-
+app.get('/dashboard', ensureLoggedIn, (req, res) => {
+    res.render('./dashboard.hbs', {
+      user: req.session.user,
+    })
+  })
 app.listen(port)
