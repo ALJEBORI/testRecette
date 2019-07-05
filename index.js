@@ -71,4 +71,17 @@ app.post('/login', urlencodedParser, (req, res) => {
     })
   }
 })
+
+app.get('/test', (req, res) => {
+  let requestLogs = []
+  requestLogs.push({
+    url: req.url,
+    date: new Date(),
+    key: require('crypto')
+      .createHash('sha256', 'e499cec581eac43b2ecc1cca90a9cb1a34483ff1')
+      .update(req.url)
+      .digest('hex'),
+  })
+  res.end('ok')
+})
 app.listen(port)
